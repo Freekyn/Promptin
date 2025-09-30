@@ -46,17 +46,17 @@ const AuthSection = () => {
   return (
     <div className="p-6 max-w-md mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">PromptInSTYL</h1>
-        <p className="text-gray-600">AI-powered prompt engineering assistant</p>
+        <h1 className="text-2xl font-bold text-neutral mb-2">PromptInSTYL</h1>
+        <p className="text-body">AI-powered prompt engineering assistant</p>
       </div>
 
       <div className="card">
-        <div className="flex border-b border-gray-200 mb-6">
+        <div className="flex border-b border-body/20 mb-6">
           <button
             className={`flex-1 py-2 px-4 text-sm font-medium ${
               activeTab === 'login'
-                ? 'text-primary-600 border-b-2 border-primary-600'
-                : 'text-gray-500 hover:text-gray-700'
+                ? 'text-accent border-b-2 border-accent'
+                : 'text-body hover:text-neutral'
             }`}
             onClick={() => setActiveTab('login')}
           >
@@ -65,8 +65,8 @@ const AuthSection = () => {
           <button
             className={`flex-1 py-2 px-4 text-sm font-medium ${
               activeTab === 'register'
-                ? 'text-primary-600 border-b-2 border-primary-600'
-                : 'text-gray-500 hover:text-gray-700'
+                ? 'text-accent border-b-2 border-accent'
+                : 'text-body hover:text-neutral'
             }`}
             onClick={() => setActiveTab('register')}
           >
@@ -75,7 +75,7 @@ const AuthSection = () => {
         </div>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+          <div className="mb-4 p-3 bg-accent/10 border border-accent/20 rounded-lg text-accent text-sm">
             {error}
           </div>
         )}
@@ -83,7 +83,7 @@ const AuthSection = () => {
         {activeTab === 'login' ? (
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-neutral mb-1">
                 Email
               </label>
               <input
@@ -96,7 +96,7 @@ const AuthSection = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-neutral mb-1">
                 Password
               </label>
               <input
@@ -119,7 +119,7 @@ const AuthSection = () => {
         ) : (
           <form onSubmit={handleRegister} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-neutral mb-1">
                 Full Name
               </label>
               <input
@@ -132,7 +132,7 @@ const AuthSection = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-neutral mb-1">
                 Email
               </label>
               <input
@@ -145,7 +145,7 @@ const AuthSection = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-neutral mb-1">
                 Password
               </label>
               <input
@@ -168,7 +168,7 @@ const AuthSection = () => {
         )}
 
         <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-body">
             Demo mode - any email/password will work
           </p>
           <button
@@ -176,7 +176,7 @@ const AuthSection = () => {
               setLoginData({ email: 'demo@example.com', password: 'demo123' });
               handleLogin({ preventDefault: () => {} });
             }}
-            className="mt-2 text-sm text-primary-600 hover:text-primary-700 underline"
+            className="mt-2 text-sm text-accent hover:text-accent/80 underline"
           >
             Quick Demo Login
           </button>

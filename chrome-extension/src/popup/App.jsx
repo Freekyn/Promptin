@@ -22,13 +22,13 @@ function AppContent() {
     return (
       <div className="flex items-center justify-center h-96">
         <div className="spinner"></div>
-        <span className="ml-2 text-gray-600">Loading...</span>
+        <span className="ml-2 text-body">Loading...</span>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-primary">
       {user ? (
         <>
           <UserBar />
